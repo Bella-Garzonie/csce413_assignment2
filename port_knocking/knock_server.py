@@ -5,6 +5,7 @@ import argparse
 import logging
 import socket
 import time
+import subprocess
 
 DEFAULT_KNOCK_SEQUENCE = [1234, 5678, 9012]
 DEFAULT_PROTECTED_PORT = 2222
@@ -22,13 +23,14 @@ def setup_logging():
 def open_protected_port(protected_port):
     """Open the protected port using firewall rules."""
     # TODO: Use iptables/nftables to allow access to protected_port.
-    logging.info("TODO: Open firewall for port %s", protected_port)
+    # iptables -A INPUT -p tcp --dport (protected port) -j ACCEPT
+    
 
 
 def close_protected_port(protected_port):
     """Close the protected port using firewall rules."""
     # TODO: Remove firewall rules for protected_port.
-    logging.info("TODO: Close firewall for port %s", protected_port)
+    
 
 
 def listen_for_knocks(sequence, window_seconds, protected_port):
@@ -39,6 +41,7 @@ def listen_for_knocks(sequence, window_seconds, protected_port):
 
     # TODO: Create UDP or TCP listeners for each knock port.
     # TODO: Track each source IP and its progress through the sequence.
+
     # TODO: Enforce timing window per sequence.
     # TODO: On correct sequence, call open_protected_port().
     # TODO: On incorrect sequence, reset progress.
