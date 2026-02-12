@@ -16,7 +16,9 @@ def send_knock(target, port, delay):
     # Example TCP knock stub:
     try:
         with socket.create_connection((target, port), timeout=1.0):
+            pass
     except OSError:
+        pass
     time.sleep(delay)
 
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+z
 
 set -euo pipefail
 
